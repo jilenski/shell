@@ -5,23 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>FinTrack</title>
 
-    <!-- PWA Settings -->
+    <!-- PWA Fullscreen Settings -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="FinTrack">
     
-    <!-- Icons (Use the same URL you used in Code.js) -->
+    <!-- Icons -->
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/10434/10434252.png">
-    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/10434/10434252.png">
-
+    
     <style>
-        /* Reset to ensure full screen iframe */
         body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #0f172a; }
-        iframe { width: 100%; height: 100%; border: none; display: block; }
+        iframe { width: 100%; height: 100%; border: none; }
     </style>
 </head>
 <body>
-    <!-- REPLACE 'YOUR_GAS_EXEC_URL_HERE' WITH YOUR ACTUAL DEPLOYMENT URL -->
-    <iframe src="https://script.google.com/macros/s/AKfycbyr7jnhjf_HttYH56nWSNGNWBSU8jMgB5RXaH_xTdXb1YxGown2vllBpeDRyOMU_rGlmg/exec" allow="clipboard-write"></iframe>
+    <!-- 
+       SANDBOX EXPLANATION:
+       We purposefully OMIT "allow-top-navigation". 
+       This physically blocks the iframe from redirecting your entire screen to Chrome.
+    -->
+    <iframe 
+        src="https://script.google.com/macros/s/AKfycbyr7jnhjf_HttYH56nWSNGNWBSU8jMgB5RXaH_xTdXb1YxGown2vllBpeDRyOMU_rGlmg/exec" 
+        sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-modals allow-popups-to-escape-sandbox"
+        allow="clipboard-write">
+    </iframe>
 </body>
 </html>
